@@ -11,3 +11,7 @@ resource "docker_image" "ubuntu_20_04" {
 resource "docker_image" "docker_registry" {
     name = "registry:latest"
 }
+
+resource "docker_image" "nexus" {
+    name = "sonatype/nexus3:latest"
+}

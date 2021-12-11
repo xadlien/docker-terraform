@@ -10,3 +10,16 @@ resource "docker_container" "docker_registry" {
     external = 5000
   }
 }
+
+# nexus
+resource "docker_container" "sonatype_nexus" {
+  image = docker_image.nexus.latest
+  name  = "docker_registry"
+  networks_advanced {
+    name = "host_network"
+  }
+  ports {
+    internal = 8081
+    external = 8081
+  }
+}
