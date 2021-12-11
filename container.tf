@@ -14,7 +14,7 @@ resource "docker_container" "docker_registry" {
 # nexus
 resource "docker_container" "sonatype_nexus" {
   image = docker_image.nexus.latest
-  name  = "docker_registry"
+  name  = "sonatype_nexus"
   networks_advanced {
     name = "host_network"
   }
