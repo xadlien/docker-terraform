@@ -22,4 +22,12 @@ resource "docker_container" "sonatype_nexus" {
     internal = 8081
     external = 8081
   }
+  ports {
+    internal = 5001
+    external = 5001
+  }
+  volumes {
+    volume_name = "nexus_data"
+    container_path = "/nexus-data"
+  }
 }
