@@ -31,3 +31,14 @@ resource "docker_container" "sonatype_nexus" {
     container_path = "/nexus-data"
   }
 }
+
+# buildkite_agent
+resource "docker_container" "buildkite_agent" {
+  image = docker_image.buildkite_agent.latest
+  name  = "buildkite_agent"
+
+  volumes {
+    volume_name = "buildkite_config"
+    container_path = "/buildkite"
+  }
+}
