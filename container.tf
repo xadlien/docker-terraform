@@ -43,4 +43,8 @@ resource "docker_container" "buildkite_agent" {
     volume_name = "buildkite_config"
     container_path = "/buildkite"
   }
+  volumes {
+    host_path = "/home/xadlien/Desktop"
+    container_path = "/build"
+  }
 }
