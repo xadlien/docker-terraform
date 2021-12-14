@@ -34,8 +34,10 @@ resource "docker_container" "sonatype_nexus" {
 
 # buildkite_agent
 resource "docker_container" "buildkite_agent" {
-  image = docker_image.buildkite_agent.latest
+  image = docker_image.buildkite_agent.name
   name  = "buildkite_agent"
+  cpu_set = "0"
+  memory = "512"
 
   volumes {
     volume_name = "buildkite_config"

@@ -16,6 +16,6 @@ resource "docker_image" "nexus" {
 }
 
 resource "docker_image" "buildkite_agent" {
-    name = "buildkite/agent:latest"
+    name = "buildkite/agent:ubuntu"
     keep_locally = true
 }
