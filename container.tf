@@ -44,7 +44,7 @@ resource "docker_container" "buildkite_agent" {
     container_path = "/buildkite"
   }
   volumes {
-    host_path = "/backup"
+    host_path = "/backup/builds"
     container_path = "/build"
   }
 }
